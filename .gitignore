@@ -1,0 +1,45 @@
+# Ignore .vscode directory
+.vscode/
+
+# Ignore any files ending with .log
+*.log
+
+# Ignore any files ending with .DS_Store (macOS system files)
+.DS_Store
+
+# Ignore environment-specific files
+.env
+
+# Ignore npm debug log file
+npm-debug.log
+
+# Ignore yarn debug log file
+yarn-debug.log
+
+# Ignore yarn error log file
+yarn-error.log
+
+# Ignore any files ending with .swp (vim swap files)
+*.swp
+
+# Ignore any files ending with .swo (vim swap files)
+*.swo
+
+# Ignore editor backup files
+*~
+
+# Ignore Jest coverage directory
+coverage/
+
+# Ignore parcel-bundler cache directory
+.cache/
+
+# Ignore webpack cache directory
+webpack_cache/
+
+# Ignore production build directories
+dist/
+build/
+
+# Ignore any files that may contain sensitive information
+*.secret
