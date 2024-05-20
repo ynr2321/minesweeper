@@ -1,16 +1,16 @@
-// tile class
+// tile class 
 
 class Tile {
     constructor() {
-        this.isMine = false; // Boolean indicating if the tile is a mine
-        this.isRevealed = false; // Boolean indicating if the tile has been revealed
-        this.isFlagged = false; // Boolean indicating if the tile has been flagged by the player
-        this.adjacentMines = 0; // Number indicating how many adjacent mines there are
+        this.isMine = false; 
+        this.isRevealed = false; 
+        this.isFlagged = false; 
+        this.adjacentMines = 0; // Needs implementation
     }
 
     // Set this tile to be a mine
     placeMine() {
-        // Implementation here
+        this.isMine = true;
     }
 
     // Reveal this tile
@@ -34,6 +34,7 @@ class Tile {
     }
 }
 
-// Example of how to use the Tile class template
-let tile = new Tile();
-console.log(tile); // Check initial properties
+module.exports = {
+    Tile: Tile,
+};
+
