@@ -15,6 +15,8 @@ let size = 5
 
 let board1 = new Board(size)
 
+console.table(board1.grid)
+
 mani14 = board1.grid[1][4].state = 'row 1 col 4'
 
 stateOf27 = board1.grid[0][3].state = 'row 0 col 3'
