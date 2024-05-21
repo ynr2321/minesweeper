@@ -5,35 +5,39 @@ class Tile {
         this.isMine = false; 
         this.isRevealed = false; 
         this.isFlagged = false; 
-        this.adjacentMines = 0; // Needs implementation
+        this.adjacentMines = 0 // TASK: create func which increments this
+
+        this.state = '?'
     }
 
-    // Set this tile to be a mine
     placeMine() {
         this.isMine = true;
+        // TASK: logic that increments adjacentMines property of tiles adjacent to where bomb is placed
     }
 
   
     reveal() {
-        // Implementation here
+        // Placeholder
     }
 
     
     flag() {
-        // Implementation here
+        // Placeholder
     }
 
    
     incrementAdjacentMines() {
-        // Implementation here
+        // Placeholder
     }
 
-    // Display the tile's status
     display() {
-        // Implementation here
+        // Placeholder
+
     }
 }
 
+
+// exports
 module.exports = {
     Tile: Tile,
 };

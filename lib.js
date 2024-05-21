@@ -7,13 +7,13 @@ const { Tile } = require('./tile');
 
 // createTileArray
 function createObjectArray(size, fillClass) {
-    // Create the square array
+
+    // Creating square away of chosen size and fill class
     const newArray = Array.from({ length: size }, () => Array(size).fill(new fillClass));
     
     // Print the array as a table (remove this debug later)
     console.table(newArray);
     
-    // Return the array
     return newArray;
 }
 

@@ -9,9 +9,17 @@ class Board {
     constructor(size) {
 
     // create array of Tile objects using fuction abstracted to lib.js
-    this.board = lib.createObjectArray(size, Tile)
+    console.log('\n\tCREATING NEW BOARD\n')
+    this.grid = lib.createObjectArray(size, Tile)
 
     }
+
+    showState() {
+    // Map each Tile object to its mainfestation property and create new table using that property as elements
+    const maniGrid = this.grid.map(row => row.map(Tile => Tile.state));
+
+    console.table(maniGrid);
+}
 }
 
 
