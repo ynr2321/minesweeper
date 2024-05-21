@@ -6,11 +6,11 @@ const { Tile } = require('./tile');
 // functions
 
 // createTileArray
-function createTileArray(size) {
+function createObjectArray(size, fillClass) {
     // Create the square array
-    const newArray = Array.from({ length: size }, () => Array(size).fill(new Tile));
+    const newArray = Array.from({ length: size }, () => Array(size).fill(new fillClass));
     
-    // Print the array as a table
+    // Print the array as a table (remove this debug later)
     console.table(newArray);
     
     // Return the array
@@ -20,5 +20,5 @@ function createTileArray(size) {
 
 // exporting functions
 module.exports = {
-    createTileArray: createTileArray,
+    createObjectArray: createObjectArray,
 };
