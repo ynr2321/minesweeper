@@ -1,5 +1,6 @@
 // tile class 
 
+
 class Tile {
     constructor() {
         this.coordinate = null // will be set by Board constructor
@@ -38,10 +39,6 @@ class Tile {
         this.isFlagged = true
     }
 
-   
-    incrementAdjacentMines() {
-        // Placeholder
-    }
 
 }
 
@@ -50,4 +47,5 @@ class Tile {
 module.exports = {
     Tile: Tile,
 };
+
 

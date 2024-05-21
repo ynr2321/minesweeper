@@ -8,3 +8,14 @@ const { Tile } = require('./tile');
 const { Board } = require('./board');
 
 // logic
+
+// GENERATE BOARD
+
+
+// PLACE X MINES IN RANDOM COORDINATES
+
+
+// UPDATE STATE OF ALL TILES
+
+
+// BEGIN PROMPT LOOP

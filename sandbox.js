@@ -33,4 +33,3 @@ console.log(board1.grid[1][4].coordinate)
 
 
 console.log('Breakpoint Passed')
-
