@@ -21,10 +21,10 @@ class Board {
     }
 
     updateVisuals() {
-        // Update the visual representation of every tile on the board
+        // iterate through the whole grid updating visuals
         for (let i = 0; i < this.size; i++) {
             for (let j = 0; j < this.size; j++) {
-                console.log(`${i},${j}`)
+                this.grid[i][j].updateVisual()
             }
         }
     }

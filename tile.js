@@ -21,7 +21,10 @@ class Tile {
         if (this.isRevealed === true && this.isFlagged === true) {
             this.state = '🚩'
         }
-        
+        // if tile is safe, show adj mine count
+        if (this.isRevealed === true && this.isFlagged === false && this.isMine === false) {
+            this.state = this.adjacentMines
+        }  
     }
 
     placeMine() {

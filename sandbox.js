@@ -18,19 +18,24 @@ let board1 = new Board(size)
 // checking it is indeed an array of 'Tile' objects
 console.table(board1.grid)
 
-// manually adding a mine and revealing
+// manually adding a mine
 board1.grid[1][4].placeMine()
-board1.grid[1][4].reveal()
-board1.grid[1][4].updateVisual()
+
+
+board1.showState()
 
 board1.updateAdjMines(board1.grid[1][4])
 
+// selecting the tile with mine
+board1.grid[1][4].reveal()
+board1.grid[1][3].reveal()
+board1.grid[1][2].reveal()
 
+board1.updateVisuals();
 
 board1.showState();
 
 
-console.log(board1.grid[1][4].coordinate)
 
 
 console.log('Breakpoint Passed')
