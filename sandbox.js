@@ -21,15 +21,16 @@ console.table(board1.grid)
 // manually adding a mine and revealing
 board1.grid[1][4].placeMine()
 board1.grid[1][4].reveal()
-board1.grid[1][4].updateProps()
+board1.grid[1][4].updateVisual()
+
+board1.updateAdjMines(board1.grid[1][4])
 
 
 
 board1.showState();
 
+
 console.log(board1.grid[1][4].coordinate)
-
-
 
 
 console.log('Breakpoint Passed')

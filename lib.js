@@ -32,13 +32,3 @@ module.exports = {
 };
 
 
-// const directions = [
-//     [0, -1], // Left
-//     [0, 1],  // Right
-//     [-1, 0], // Above
-//     [1, 0],  // Below
-//     [-1, -1], // Top-left
-//     [-1, 1], // Top-right
-//     [1, -1], // Bottom-left
-//     [1, 1]   // Bottom-right
-// ];

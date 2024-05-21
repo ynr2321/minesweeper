@@ -12,7 +12,7 @@ class Tile {
         this.state = '?'
     }
     // METHODS
-    updateProps() {
+    updateVisual() {
         // if hidden mine is chosen
         if (this.isRevealed === true && this.isMine === true) {
             this.state = '💣'
