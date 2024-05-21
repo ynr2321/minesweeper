@@ -9,7 +9,7 @@ class Board {
     constructor(size) {
 
     // create array of Tile objects using fuction abstracted to lib.js
-    console.log('\n\tCREATING NEW BOARD\n')
+    console.log('\n\t-------------------------------- C R E A T I N G   N E W   B O A R D --------------------------------\n')
     this.grid = lib.createObjectArray(size, Tile)
 
     }

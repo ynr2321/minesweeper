@@ -15,13 +15,19 @@ let size = 5
 
 let board1 = new Board(size)
 
+// checking it is indeed an array of 'Tile' objects
 console.table(board1.grid)
 
-mani14 = board1.grid[1][4].state = 'row 1 col 4'
+// manually adding a mine and revealing
+board1.grid[1][4].placeMine()
+board1.grid[1][4].reveal()
+board1.grid[1][4].updateProps()
 
-stateOf27 = board1.grid[0][3].state = 'row 0 col 3'
+
 
 board1.showState();
+
+console.log(board1.grid[1][4].coordinate)
 
 
 

@@ -2,12 +2,25 @@
 
 class Tile {
     constructor() {
+        this.coordinate = null // will be set by Board constructor
         this.isMine = false; 
         this.isRevealed = false; 
         this.isFlagged = false; 
         this.adjacentMines = 0 // TASK: create func which increments this
 
         this.state = '?'
+    }
+    // METHODS
+    updateProps() {
+        // if hidden mine is chosen
+        if (this.isRevealed === true && this.isMine === true) {
+            this.state = '💣'
+        }
+        // if tile is flagged
+        if (this.isRevealed === true && this.isFlagged === true) {
+            this.state = '🚩'
+        }
+        
     }
 
     placeMine() {
@@ -17,12 +30,12 @@ class Tile {
 
   
     reveal() {
-        // Placeholder
+        this.isRevealed = true;
     }
 
     
     flag() {
-        // Placeholder
+        this.isFlagged = true
     }
 
    
@@ -30,10 +43,6 @@ class Tile {
         // Placeholder
     }
 
-    display() {
-        // Placeholder
-
-    }
 }
 
 
