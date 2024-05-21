@@ -8,7 +8,9 @@ const { Tile } = require('./tile');
 // ---------------------------------------------
 
 
-// test instatiating a tile object
+// test instanciating an array of tile objects
 
 
-lib.createTileArray(5)
+let board = lib.createTileArray(5)
+
+

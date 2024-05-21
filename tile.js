@@ -13,17 +13,17 @@ class Tile {
         this.isMine = true;
     }
 
-    // Reveal this tile
+  
     reveal() {
         // Implementation here
     }
 
-    // Flag this tile
+    
     flag() {
         // Implementation here
     }
 
-    // Increment the count of adjacent mines
+   
     incrementAdjacentMines() {
         // Implementation here
     }

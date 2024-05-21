@@ -6,7 +6,7 @@ const { Tile } = require('./tile');
 // functions
 
 // createTileArray
-function createTileArray(size, value = 1) {
+function createTileArray(size) {
     // Create the square array
     const newArray = Array.from({ length: size }, () => Array(size).fill(new Tile));
     
