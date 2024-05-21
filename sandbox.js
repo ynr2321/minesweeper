@@ -11,20 +11,16 @@ const { Board } = require("./board");
 
 // test instanciating an array of tile objects
 
-let size = 10
+let size = 5
 
 let board1 = new Board(size)
 
-mani14 = board1.grid[1][4].manifestation = 'row 1 col 4'
+mani14 = board1.grid[1][4].state = 'row 1 col 4'
 
-mani14 = board1.grid[1][4].manifestation = 'row 1 col 4'
+stateOf27 = board1.grid[0][3].state = 'row 0 col 3'
 
 board1.showState();
-// // Map each Tile object to its name property
-// const maniGrid = board1.grid.map(row => row.map(Tile => Tile.manifestation));
 
-// // Print the transformed array using console.table
-// console.table(maniGrid);
 
 
 

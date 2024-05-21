@@ -3,18 +3,20 @@
 // imports
 const { Tile } = require('./tile');
 
-// functions
+// HELPER FUNCTIONS -----------------------------------------------------
 
-// createTileArray
-function createObjectArray(size, fillClass) {
 
-    // Creating square away of chosen size and fill class
-    const newArray = Array.from({ length: size }, () => Array(size).fill(new fillClass));
-    
-    // Print the array as a table (remove this debug later)
-    console.table(newArray);
-    
-    return newArray;
+// Create a square array of chosen size and filer object
+function createObjectArray(size, FillClass) {
+    const array = [];
+    for (let i = 0; i < size; i++) {
+        const row = [];
+        for (let j = 0; j < size; j++) {
+            row.push(new FillClass());
+        }
+        array.push(row);
+    }
+    return array;
 }
 
 

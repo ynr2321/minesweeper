@@ -16,9 +16,9 @@ class Board {
 
     showState() {
     // Map each Tile object to its mainfestation property and create new table using that property as elements
-    const maniGrid = this.grid.map(row => row.map(Tile => Tile.state));
+    const manifestedGrid = this.grid.map(row => row.map(Tile => Tile.state));
 
-    console.table(maniGrid);
+    console.table(manifestedGrid);
 }
 }
 
