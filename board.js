@@ -24,11 +24,13 @@ class Board {
 
     updateVisuals() {
         // iterate through the whole grid updating visuals
-        for (let i = 0; i < this.size; i++) {
-            for (let j = 0; j < this.size; j++) {
-                this.grid[i][j].updateVisual()
+        for (let w = 0; w < this.size; w++){
+            for (let i = 0; i < this.size; i++) {
+                for (let j = 0; j < this.size; j++) {
+                    this.grid[i][j].updateVisual()
+                }
             }
-        }
+    }
     }
     validateAdjMines() {
         // iterate through the whole grid updating visuals

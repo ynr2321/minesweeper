@@ -35,9 +35,9 @@ for (let i = 0; i < size*size; i++) {
         if (A == 'R' || A == 'r'){
             // reveal and update
             gameBoard.grid[X[0]][X[1]].reveal();
-            gameBoard.revealAdjZeros(gameBoard.grid[X[0]][X[1]]); // might break
+            //gameBoard.revealAdjZeros(gameBoard.grid[X[0]][X[1]]); // might break
+            gameBoard.repeatRevealAdjZeros();
             gameBoard.updateVisuals(); // might break
-            //gameBoard.grid[X[0]][X[1]].updateVisual();
         }
         if (A == 'F' || A == 'f'){
             // flag and update

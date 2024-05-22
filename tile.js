@@ -3,11 +3,11 @@
 
 class Tile {
     constructor() {
+        this.adjacentMines = 0 
         this.coordinate = null // will be set by Board constructor
         this.isMine = false; 
         this.isRevealed = false; 
         this.isFlagged = false; 
-        this.adjacentMines = 0 // TASK: create func which increments this
 
         this.state = '❓'
     }
@@ -34,8 +34,10 @@ class Tile {
 
   
     reveal() {
+        if (this.isRevealed === false){
         this.isRevealed = true;
         console.log(`\nTile [${this.coordinate[0]},${this.coordinate[1]}] revealed.`)
+        }
     }
 
     
