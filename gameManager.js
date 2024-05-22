@@ -17,6 +17,8 @@ class GameManager {
         let gameBoard = new Board(sizeChoice)
         // Randomly place X mines where X is about 12% the board area
         this.totalMines = Math.round(0.12*sizeChoice*sizeChoice) 
+        // setting the Board objects total mines to the value determined by size input (so validate func works)
+        gameBoard.totalMines = this.totalMines
         
         for (let iter = 0; iter < this.totalMines; iter++) {
             let i = Math.floor(Math.random() * sizeChoice);

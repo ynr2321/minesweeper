@@ -8,6 +8,7 @@ const lib = require('./lib');
 class Board {
     constructor(size) {
     this.size = size
+    this.totalMines = 0
     // create array of Tile objects using fuction abstracted to lib.js
     console.log('\n\t-------------------------------- C R E A T I N G   N E W   B O A R D --------------------------------\n')
     this.grid = lib.createObjectArray(size, Tile)
@@ -26,6 +27,16 @@ class Board {
         for (let i = 0; i < this.size; i++) {
             for (let j = 0; j < this.size; j++) {
                 this.grid[i][j].updateVisual()
+            }
+        }
+    }
+    validateAdjMines() {
+        // iterate through the whole grid updating visuals
+        for (let i = 0; i < this.size; i++) {
+            for (let j = 0; j < this.size; j++) {
+                if (this.grid[i][j].adjacentMines > this.totalMines){
+                    this.grid[i][j].adjacentMines = this.totalMines
+                }
             }
         }
     }
@@ -82,6 +93,63 @@ class Board {
                 this.grid[i+1][j+1].adjacentMines += 1;
             } catch (error) { 
                 // Likely out of index - if so, just skip to the next
+            }
+        }
+
+
+    }
+    revealAdjZeros(Tile) {
+        // reveal adjacent zeros: input tile should be revealed already
+        let i = Tile.coordinate[0]; let j = Tile.coordinate[1]; 
+       
+        if (this.grid[i][j].isRevealed === true){
+            // LEFT
+            try {
+                this.grid[i][j-1].isRevealed = true;
+            } catch (error) { 
+                // Likely out of index - if so, just skip to the next
+            }
+            // RIGHT
+            try {
+                this.grid[i][j+1].isRevealed = true;
+            } catch (error) { 
+
+            }
+            // ABOVE
+            try {
+                this.grid[i-1][j].isRevealed = true;
+            } catch (error) { 
+
+            }
+            // BELOW
+            try {
+                this.grid[i+1][j].isRevealed = true;
+            } catch (error) { 
+
+            }
+            // TOP-LEFT
+            try {
+                this.grid[i-1][j-1].isRevealed = true;
+            } catch (error) { 
+
+            }
+            // TOP-RIGHT
+            try {
+                this.grid[i-1][j+1].isRevealed = true;
+            } catch (error) { 
+
+            }
+            // BOTTOM-LEFT
+            try {
+                this.grid[i+1][j-1].isRevealed = true;
+            } catch (error) { 
+
+            }
+            // BOTTOM-RIGHT
+            try {
+                this.grid[i+1][j+1].isRevealed = true;
+            } catch (error) { 
+
             }
         }
 
