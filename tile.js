@@ -16,6 +16,7 @@ class Tile {
         // if hidden mine is chosen
         if (this.isRevealed === true && this.isMine === true) {
             this.state = '💣'
+            console.log('\nBOOOOOM!!, your performance was 💩!\nWe trust you to end the game yourself as win and lose conditions have not been added yet')
         }
         // if tile is flagged
         if (this.isRevealed === true && this.isFlagged === true) {
@@ -29,12 +30,12 @@ class Tile {
 
     placeMine() {
         this.isMine = true;
-        // TASK: logic that increments adjacentMines property of tiles adjacent to where bomb is placed
     }
 
   
     reveal() {
         this.isRevealed = true;
+        console.log(`\nTile [${this.coordinate[0]},${this.coordinate[1]}] revealed.`)
     }
 
     

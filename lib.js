@@ -2,7 +2,8 @@
 
 // imports
 const { Tile } = require('./tile');
-
+const ps = require("prompt-sync")
+const prompt = ps()
 // HELPER FUNCTIONS -----------------------------------------------------
 
 
@@ -22,13 +23,27 @@ function createObjectArray(size, FillClass) {
     return array;
 }
 
-function incrementAdjacentMines() {
-    
-}
+function getCoordinates() {
+
+    console.log('\n')
+    let input = prompt("Enter coordinates of tile you want to reveal in the format row,col: ");
+  
+    if (input.trim() == 'End' || 'END' || 'end'){
+        return 'END'
+    }
+
+    let parts = input.split(',');
+
+    let coordinates = parts.map(Number);
+
+    return coordinates;
+
+  }
 
 // exporting functions
 module.exports = {
     createObjectArray: createObjectArray,
+    getCoordinates: getCoordinates,
 };
 
 

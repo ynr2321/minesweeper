@@ -8,32 +8,36 @@ const { Tile } = require('./tile');
 const { Board } = require("./board");
 // ---------------------------------------------
 
+// SIMULATING GAME AND REVEALING ALL TILES TO CHECK SANITY
 
-// test instanciating an array of tile objects
+// Generate board of chosen size
+let sizeChoice = parseInt(prompt('Enter the size of the game: '))
+let gameBoard = new Board(sizeChoice)
+// Randomly place X mines where X is about 12% the board area
+let totalMines = Math.round(0.12*sizeChoice*sizeChoice) 
 
-let size = 5
+for (let iter = 0; iter < totalMines; iter++) {
+    let i = Math.floor(Math.random() * sizeChoice);
+    let j = Math.floor(Math.random() * sizeChoice);
 
-let board1 = new Board(size)
+    gameBoard.grid[i][j].placeMine();
+    gameBoard.grid[i][j].updateVisual();
+    gameBoard.updateAdjMines(gameBoard.grid[i][j])
 
-// checking it is indeed an array of 'Tile' objects
-console.table(board1.grid)
+}
 
-// manually adding a mine
-board1.grid[1][4].placeMine()
+gameBoard.showState();
+// reveal all tiles
+for (let i = 0; i < sizeChoice; i++) {
+    for (let j = 0; j < sizeChoice; j++) {
+        gameBoard.grid[i][j].reveal();
+        gameBoard.grid[i][j].updateVisual()
+    }
+}
+gameBoard.showState();
 
 
-board1.showState()
 
-board1.updateAdjMines(board1.grid[1][4])
-
-// selecting the tile with mine
-board1.grid[1][4].reveal()
-board1.grid[1][3].reveal()
-board1.grid[1][2].reveal()
-
-board1.updateVisuals();
-
-board1.showState();
 
 
 
