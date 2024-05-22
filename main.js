@@ -21,7 +21,6 @@ let size = gameBoard.grid.length;
 console.log('\n\t--------------------------------  Type \'end\' to exit game  --------------------------------\n')
 for (let i = 0; i < size*size; i++) {
 
-   
 
         X = lib.getCoordinates(); // the reveal choice
         if (X == 'END'){
@@ -35,4 +34,4 @@ for (let i = 0; i < size*size; i++) {
 }
 
 
-console.log('\n\tGame Over')
+console.log('\n\t--------------------------------  G A M E   O V E R  --------------------------------\n')

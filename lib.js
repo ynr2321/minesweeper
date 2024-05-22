@@ -26,11 +26,11 @@ function createObjectArray(size, FillClass) {
 function getCoordinates() {
 
     console.log('\n')
-    let input = prompt("Enter coordinates of tile you want to reveal in the format row,col: ");
+    let input = prompt("Enter coordinates of tile you want to reveal in the format row,col: ").trim();
   
-    // if (input.trim() == 'End' || 'END' || 'end'){
-    //     return 'END'
-    // }
+    if (input === 'End' || input === 'END' || input === 'end'){
+        return 'END'
+    }
 
     let parts = input.split(',');
 
