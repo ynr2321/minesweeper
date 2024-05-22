@@ -23,8 +23,12 @@ for (let i = 0; i < size*size; i++) {
 
 
         X = lib.getCoordinates(); // the reveal choice
+        if (X == 'END'){
+            console.clear()
+            break
+        }
         A = lib.getAction();
-        if (X == 'END' || A == 'END'){
+        if (A == 'END'){
             console.clear()
             break
         }
