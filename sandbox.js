@@ -15,7 +15,6 @@ let sizeChoice = parseInt(prompt('Enter the size of the game: '))
 let gameBoard = new Board(sizeChoice)
 // Randomly place X mines where X is about 12% the board area
 let totalMines = Math.round(0.12*sizeChoice*sizeChoice) 
-
 for (let iter = 0; iter < totalMines; iter++) {
     let i = Math.floor(Math.random() * sizeChoice);
     let j = Math.floor(Math.random() * sizeChoice);
@@ -26,6 +25,7 @@ for (let iter = 0; iter < totalMines; iter++) {
 
 }
 
+
 gameBoard.showState();
 // reveal all tiles
 for (let i = 0; i < sizeChoice; i++) {
@@ -34,6 +34,8 @@ for (let i = 0; i < sizeChoice; i++) {
         gameBoard.grid[i][j].updateVisual()
     }
 }
+
+
 gameBoard.showState();
 
 

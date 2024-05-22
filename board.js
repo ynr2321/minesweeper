@@ -98,63 +98,91 @@ class Board {
 
 
     }
+
     revealAdjZeros(Tile) {
         // reveal adjacent zeros: input tile should be revealed already
         let i = Tile.coordinate[0]; let j = Tile.coordinate[1]; 
        
-        if (this.grid[i][j].isRevealed === true){
+        if (this.grid[i][j].isRevealed === true && this.grid[i][j].adjacentMines == 0){
             // LEFT
             try {
-                this.grid[i][j-1].isRevealed = true;
+                if (this.grid[i][j-1].adjacentMines == 0) {
+                    this.grid[i][j-1].isRevealed = true;
+                }
             } catch (error) { 
                 // Likely out of index - if so, just skip to the next
             }
             // RIGHT
             try {
+                if (this.grid[i][j+1].adjacentMines == 0) {
                 this.grid[i][j+1].isRevealed = true;
+                }
             } catch (error) { 
 
             }
             // ABOVE
             try {
+                if (this.grid[i-1][j].adjacentMines == 0) {
                 this.grid[i-1][j].isRevealed = true;
+                }
             } catch (error) { 
 
             }
             // BELOW
             try {
+                if (this.grid[i+1][j].adjacentMines == 0) {
                 this.grid[i+1][j].isRevealed = true;
+                }
             } catch (error) { 
 
             }
             // TOP-LEFT
             try {
+                if (this.grid[i-1][j-1].adjacentMines == 0) {
                 this.grid[i-1][j-1].isRevealed = true;
+                }
             } catch (error) { 
 
             }
             // TOP-RIGHT
             try {
+                if (this.grid[i-1][j+1].adjacentMines == 0) {
                 this.grid[i-1][j+1].isRevealed = true;
+                }
             } catch (error) { 
 
             }
             // BOTTOM-LEFT
             try {
+                if (this.grid[i+1][j-1].adjacentMines == 0) {
                 this.grid[i+1][j-1].isRevealed = true;
+                }
             } catch (error) { 
 
             }
             // BOTTOM-RIGHT
             try {
+                if (this.grid[i+1][j+1].adjacentMines == 0) {
                 this.grid[i+1][j+1].isRevealed = true;
+                }
             } catch (error) { 
 
             }
         }
-
-
     }
+
+    repeatRevealAdjZeros() {
+        // iterate through the whole grid
+        for (let i = 0; i < this.size; i++) {
+            for (let j = 0; j < this.size; j++) {
+                if (this.grid[i][j].isRevealed === true){
+                    this.revealAdjZeros(this.grid[i][j]);
+                }
+            }
+        }
+    }
+
+    
 }
 
 
