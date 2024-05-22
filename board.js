@@ -15,6 +15,7 @@ class Board {
     }
 
     showState() {
+        // This should be done after a tile's state is updated via the updateVisual() or updateVisuals() method
         // Map each Tile object to its mainfestation property and create new table using that property as elements
         const manifestedGrid = this.grid.map(row => row.map(Tile => Tile.state));
         console.table(manifestedGrid);

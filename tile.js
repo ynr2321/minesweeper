@@ -41,7 +41,7 @@ class Tile {
     
     flag() {
         this.isFlagged = true
-        //this.state = '🏴‍☠️'
+        
     }
 
 

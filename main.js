@@ -1,14 +1,12 @@
 // minesweeper
 
-// imports
+// IMPORTS
 const ps = require("prompt-sync")
 const prompt = ps()
 const lib = require('./lib');
-const { Tile } = require('./tile');
-const { Board } = require('./board');
 const { GameManager } = require('./gameManager');
 
-// logic
+
 
 // GENERATE BOARD
 GM = new GameManager();
@@ -32,7 +30,6 @@ for (let i = 0; i < size*size; i++) {
             console.clear()
             break
         }
-
 
 
         if (A == 'R' || A == 'r'){
