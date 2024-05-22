@@ -23,12 +23,25 @@ for (let i = 0; i < size*size; i++) {
 
 
         X = lib.getCoordinates(); // the reveal choice
-        if (X == 'END'){
+        A = lib.getAction();
+        if (X == 'END' || A == 'END'){
             console.clear()
             break
         }
-        gameBoard.grid[X[0]][X[1]].reveal();
-        gameBoard.grid[X[0]][X[1]].updateVisual();
+
+
+
+        if (A == 'R' || A == 'r'){
+            // reveal and update
+            gameBoard.grid[X[0]][X[1]].reveal();
+            gameBoard.grid[X[0]][X[1]].updateVisual();
+        }
+        if (A == 'F' || A == 'f'){
+            // flag and update
+            gameBoard.grid[X[0]][X[1]].flag();
+            gameBoard.grid[X[0]][X[1]].updateVisual();
+        }
+    
 
         gameBoard.showState();
 }

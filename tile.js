@@ -9,7 +9,7 @@ class Tile {
         this.isFlagged = false; 
         this.adjacentMines = 0 // TASK: create func which increments this
 
-        this.state = '?'
+        this.state = '❓'
     }
     // METHODS
     updateVisual() {
@@ -19,11 +19,11 @@ class Tile {
             console.log('\nBOOOOOM!!, your performance was 💩!\nWe trust you to end the game yourself as win and lose conditions have not been added yet')
         }
         // if tile is flagged
-        if (this.isRevealed === true && this.isFlagged === true) {
-            this.state = '🚩'
+        if (this.isFlagged === true) {
+            this.state = '🏴‍☠️'
         }
         // if tile is safe, show adj mine count
-        if (this.isRevealed === true && this.isFlagged === false && this.isMine === false) {
+        if (this.isRevealed === true && this.isMine === false) {
             this.state = this.adjacentMines
         }  
     }
@@ -41,6 +41,7 @@ class Tile {
     
     flag() {
         this.isFlagged = true
+        //this.state = '🏴‍☠️'
     }
 
 

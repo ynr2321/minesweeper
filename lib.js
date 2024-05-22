@@ -26,7 +26,7 @@ function createObjectArray(size, FillClass) {
 function getCoordinates() {
 
     console.log('\n')
-    let input = prompt("Enter coordinates of tile you want to reveal in the format row,col: ").trim();
+    let input = prompt("Enter coordinates of tile you want to select in the format row,col: ").trim();
   
     if (input === 'End' || input === 'END' || input === 'end'){
         return 'END'
@@ -40,9 +40,31 @@ function getCoordinates() {
 
   }
 
+  function getAction() {
+
+    console.log('\n')
+    let input = prompt("Enter the action to perform on tile (F - flag | R - reveal): ").trim();
+  
+    if (input === 'End' || input === 'END' || input === 'end'){
+        return 'END'
+    }
+
+    while (true) {
+        // Check if the input is either 'F' or 'R'
+        if (input === 'F' || input === 'R' || input === 'f' || input === 'r') {
+          return input;
+        }
+        // re-prompt until format correct
+        alert("Invalid input. Please enter 'F' for flag or 'R' for reveal.");
+      }
+
+
+  }
+
 // exporting functions
 module.exports = {
     createObjectArray: createObjectArray,
     getCoordinates: getCoordinates,
+    getAction: getAction,
 };
 
