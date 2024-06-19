@@ -32,6 +32,7 @@ class Board {
             }
     }
     }
+
     validateAdjMines() {
         // iterate through the whole grid updating visuals
         for (let i = 0; i < this.size; i++) {
@@ -40,6 +41,31 @@ class Board {
                     this.grid[i][j].adjacentMines = this.totalMines
                 }
             }
+        }
+    }
+
+    checkWinCondition() {
+        // iterate through grid and check win condition
+        let revealedMineCount = 0;
+        let revealCount = 0;
+        for (let i = 0; i < this.size; i++) {
+            for (let j = 0; j < this.size; j++) {
+                // increment revealed mine count
+                if (this.grid[i][j].isMine === true && this.grid[i][j].isRevealed === true){
+                    revealedMineCount =+ 1;
+                }
+                // increment revealed tile count
+                if (this.grid[i][j].isRevealed === true) {
+                    revealCount += 1;
+                }
+                console.log(revealCount)
+            }
+        }
+        if (revealedMineCount > 0) {
+            console.log('\nBOOOOOM!!, your performance was 💩!\nWe trust you to end the game yourself as win and lose conditions have not been added yet')
+        }
+        if (revealCount >= ((this.size*this.size) - this.totalMines)) {
+            console.log("\n CONGRATS YOU WON THE GAME WOOOOOO")
         }
     }
 
@@ -183,7 +209,6 @@ class Board {
             }
         }
     }
-
     
 }
 

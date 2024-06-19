@@ -47,6 +47,7 @@ for (let i = 0; i < size*size; i++) {
     
 
         gameBoard.showState();
+        gameBoard.checkWinCondition()
 }
 
 

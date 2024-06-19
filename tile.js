@@ -16,7 +16,6 @@ class Tile {
         // if hidden mine is chosen
         if (this.isRevealed === true && this.isMine === true) {
             this.state = '💣'
-            console.log('\nBOOOOOM!!, your performance was 💩!\nWe trust you to end the game yourself as win and lose conditions have not been added yet')
         }
         // if tile is flagged
         if (this.isFlagged === true) {
@@ -32,7 +31,6 @@ class Tile {
         this.isMine = true;
     }
 
-  
     reveal() {
         if (this.isRevealed === false){
         this.isRevealed = true;

@@ -24,6 +24,7 @@ for (let i = 0; i < gameBoard.size; i++) {
     for (let j = 0; j < gameBoard.size; j++) {
         gameBoard.grid[i][j].reveal();
         gameBoard.grid[i][j].updateVisual()
+        gameBoard.checkWinCondition();
 
     }
 }
